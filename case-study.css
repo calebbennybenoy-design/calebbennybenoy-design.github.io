@@ -694,6 +694,9 @@
 
   .cs-section { padding: 56px 0; }
 
+  .cs-screens { overflow-x: clip; }
+  .cs-carousel-outer { overflow: hidden; }
+
   .cs-flow {
     overflow-x: auto;
     justify-content: flex-start;
@@ -713,6 +716,17 @@
   .cs-carousel.phone-carousel .cs-slide { flex: 0 0 calc(50% - 8px); min-width: 200px; }
   .cs-slide-phones { gap: 16px; padding: 0 12px; }
   .cs-slide-phone { flex: 0 1 50%; max-width: 50%; }
+
+  /* Paired phone carousel — single phone per slide on mobile */
+  .cs-carousel.phone-paired .cs-slide { flex: 0 0 100%; }
+  .cs-carousel.phone-paired .cs-slide-phone {
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10%;
+  }
 
   .cs-quote { padding: 36px 32px; }
   .cs-quote::before { font-size: 48px; top: 16px; left: 18px; }

@@ -337,6 +337,18 @@
       const nextBtn = document.getElementById('carouselNext');
       if (!carousel || !dotsWrap) return;
 
+      const isMobile = window.innerWidth <= 900;
+      if (isMobile && carousel.classList.contains('phone-paired')) {
+        const phones = [...carousel.querySelectorAll('.cs-slide-phone')];
+        carousel.innerHTML = '';
+        phones.forEach(phone => {
+          const slide = document.createElement('div');
+          slide.classList.add('cs-slide');
+          slide.appendChild(phone);
+          carousel.appendChild(slide);
+        });
+      }
+
       const slides = carousel.querySelectorAll('.cs-slide');
       let current = 0;
 
