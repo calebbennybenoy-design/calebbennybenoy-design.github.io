@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>People Management Platform — Caleb Benny Benoy</title>
+  <meta name="description" content="Case study: People Management Platform for the New Apostolic Church across Zambia, Malawi, and Zimbabwe. Product design by Caleb Benny Benoy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Caleb's Portfolio">
+        <span class="logo-mark">Caleb's</span>
+        <span class="logo-tail">Portfolio</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="cs-hero">
+    <div class="container-narrow">
+      <span class="client-pill">New Apostolic Church · Zambia / Malawi / Zimbabwe</span>
+      <h1>People Management Platform</h1>
+      <p class="hook">A church of hundreds of thousands of members across three countries had no central system for managing its people. Every congregation operated independently — on paper, in spreadsheets, or from memory.</p>
+
+      <div class="cs-stats">
+        <div class="cs-stat">
+          <span class="stat-label">My Role</span>
+          <span class="stat-sep"></span>
+          <span class="stat-val">Product Designer</span>
+        </div>
+        <div class="cs-stat">
+          <span class="stat-label">Platform</span>
+          <span class="stat-sep"></span>
+          <span class="stat-val">Web Platform</span>
+        </div>
+        <div class="cs-stat">
+          <span class="stat-label">Year</span>
+          <span class="stat-sep"></span>
+          <span class="stat-val">2024–2025</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- The Organisation -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">The Organisation</span>
+        <div class="cs-content">
+          <h2>About the New Apostolic Church</h2>
+          <p>The New Apostolic Church is one of the largest Christian denominations in sub-Saharan Africa. Across Zambia, Malawi, and Zimbabwe, the church operates through a deep hierarchy — from national Apostle down through District Elders, Congregations, and individual members. Every level has different responsibilities, different visibility, and different data needs. Until this project, none of it was connected.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">The Problem</span>
+        <div class="cs-content">
+          <h2>Disconnected by design.</h2>
+          <p>Each congregation managed its own member records independently. Some used paper registers. Others used personal spreadsheets. Many relied on the memory of the local elder. There was no way for leadership at the district or national level to see who belonged to which congregation, track attendance patterns, or coordinate events across regions.</p>
+          <p>When a member moved from one congregation to another — which happened often — their record simply disappeared. The church had no single source of truth for its own people.</p>
+
+          <div class="cs-callout">
+            <p><strong>The constraint:</strong> The permission model had to mirror the church's own hierarchy exactly. A congregation leader should never see data from another congregation. A district elder should see all congregations in their district — and nothing outside it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Research</span>
+        <div class="cs-content">
+          <h2>Mapping the invisible structure.</h2>
+          <p>The first thing I did was map the church's organisational hierarchy — not as an org chart, but as a permission tree. Every role had implicit rules about what they could see, who they could manage, and what actions they were allowed to take. These rules were understood culturally but had never been written down.</p>
+          <p>I interviewed church administrators at multiple levels to understand their actual workflows. The national office needed reporting and oversight. District elders needed member transfers and event coordination. Congregation leaders needed attendance tracking and member profiles. Each level had different tasks, different frequencies, and different comfort levels with technology.</p>
+          <p>I used Claude to model the permission scenarios and catch conflicts — what happens when a member belongs to a choir that spans two congregations? What if a district elder is also a congregation member? These edge cases shaped the data model before any UI work began.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Decisions -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Design Decisions</span>
+        <div class="cs-content">
+          <h2>Structure that mirrors the church.</h2>
+
+          <ol class="cs-decisions">
+            <li class="cs-decision">
+              <span class="cs-decision-num">01</span>
+              <div>
+                <h3>Hierarchy as the navigation model</h3>
+                <p>The sidebar and filtering system mirrors the church's own structure — Country, District, Congregation. Users don't learn a new mental model. They navigate the system the same way they think about their organisation.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">02</span>
+              <div>
+                <h3>Congregation filter as default scope</h3>
+                <p>Every user lands on their own congregation's data by default. The filter is there to expand scope upward for users with permission — not to narrow down from a global view. This prevents information overload and respects the permission model.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">03</span>
+              <div>
+                <h3>Flyout panel for member detail</h3>
+                <p>Clicking a member opens a side panel rather than a full page. The congregation list stays visible behind it, preserving context. Leaders can scan, open, close, and move to the next member without losing their place.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">04</span>
+              <div>
+                <h3>Role-based feature visibility</h3>
+                <p>The system doesn't show locked features with a "you don't have access" message. It hides them entirely. A congregation leader never sees the district-level reporting tab. A district elder never sees the national admin panel. The interface matches exactly what each user is allowed to do.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">05</span>
+              <div>
+                <h3>Invite flow with role assignment</h3>
+                <p>New users are invited by someone above them in the hierarchy and assigned a role at the point of invitation. This ensures every account enters the system with the correct permissions — no manual configuration after the fact.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screens -->
+  <section class="cs-section cs-screens reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Screens</span>
+        <div class="cs-content"></div>
+      </div>
+    </div>
+
+    <div class="container" style="max-width:1200px">
+      <div class="cs-carousel-outer">
+        <button class="cs-arrow prev" id="carouselPrev" aria-label="Previous screen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </button>
+        <button class="cs-arrow next" id="carouselNext" aria-label="Next screen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+
+        <div class="cs-carousel" id="carousel">
+          <div class="cs-slide">
+            <img src="images/nac-home.png" alt="Home page dashboard" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">Home — congregation dashboard overview</p>
+          </div>
+          <div class="cs-slide">
+            <img src="images/nac-filter.png" alt="Home page with congregation filter" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">Congregation filter — scope to any level</p>
+          </div>
+          <div class="cs-slide">
+            <img src="images/nac-members.png" alt="Church member screen" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">Member list — browse and search</p>
+          </div>
+          <div class="cs-slide">
+            <img src="images/nac-flyout.png" alt="Church member flyout panel" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">Member flyout — full detail without losing context</p>
+          </div>
+          <div class="cs-slide">
+            <img src="images/nac-choir.png" alt="Choir practice screen" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">Choir practice — group management</p>
+          </div>
+          <div class="cs-slide">
+            <img src="images/nac-users.png" alt="System users screen" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">System users — role-based access control</p>
+          </div>
+          <div class="cs-slide">
+            <img src="images/nac-invite.png" alt="User invite popup" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">Invite flow — role assigned at entry</p>
+          </div>
+          <div class="cs-slide">
+            <img src="images/nac-settings.png" alt="Settings page" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">Settings — system configuration</p>
+          </div>
+          <div class="cs-slide">
+            <img src="images/nac-profile.png" alt="Profile settings" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">Profile settings — personal account</p>
+          </div>
+          <div class="cs-slide">
+            <img src="images/nac-login.png" alt="Login page" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">Login — clean, minimal entry point</p>
+          </div>
+        </div>
+        <div class="cs-dots" id="carouselDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reflection -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Reflection</span>
+        <div class="cs-content">
+          <div class="cs-quote">
+            <p>The hardest part of this project was not the interface — it was the permission model. Getting it wrong would have meant leaders seeing data they shouldn't, or worse, not seeing data they need. The decision to hide features entirely rather than disable them came from watching test users hesitate at greyed-out buttons. Removing the option was kinder than explaining why it was locked.</p>
+            <p style="margin-top:16px">If I were to revisit this, I'd explore an offline-first mode. Many congregations in rural Zambia and Malawi have unreliable internet. The system currently requires a connection — building a sync layer would make it genuinely useful in the field, not just at the office.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Project -->
+  <div class="cs-next reveal">
+    <div class="container-narrow">
+      <div class="cs-next-inner">
+        <div>
+          <p class="cs-next-label">Next project</p>
+          <h3 class="cs-next-title">Incident Report Approval</h3>
+        </div>
+        <a href="project-3.html" class="btn btn-primary">View case study
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 Caleb Benny Benoy</span>
+      <span>Designed with intention.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (() => {
+      const carousel = document.getElementById('carousel');
+      const dotsWrap = document.getElementById('carouselDots');
+      const prevBtn = document.getElementById('carouselPrev');
+      const nextBtn = document.getElementById('carouselNext');
+      if (!carousel || !dotsWrap) return;
+
+      const slides = carousel.querySelectorAll('.cs-slide');
+      let current = 0;
+
+      function goTo(i) {
+        i = Math.max(0, Math.min(i, slides.length - 1));
+        slides[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      }
+
+      slides.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.classList.add('cs-dot');
+        d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        if (i === 0) d.classList.add('active');
+        d.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(d);
+      });
+
+      const dots = dotsWrap.querySelectorAll('.cs-dot');
+
+      function syncDots() {
+        dots.forEach((d, di) => {
+          d.classList.toggle('active', di === current);
+          d.classList.remove('filling');
+        });
+        void dots[current].offsetWidth;
+        dots[current].classList.add('filling');
+      }
+
+      const cio = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            current = [...slides].indexOf(e.target);
+            syncDots();
+          }
+        });
+      }, { root: carousel, threshold: 0.6 });
+
+      slides.forEach((s) => cio.observe(s));
+      syncDots();
+
+      let sectionVisible = false;
+      const sio = new IntersectionObserver(([e]) => {
+        sectionVisible = e.isIntersecting;
+      }, { threshold: 0.3 });
+      sio.observe(carousel.closest('.cs-screens'));
+
+      let timer = setInterval(advance, 5000);
+      function advance() {
+        if (!sectionVisible) return;
+        goTo(current + 1 >= slides.length ? 0 : current + 1);
+      }
+      function resetTimer() {
+        clearInterval(timer);
+        syncDots();
+        timer = setInterval(advance, 5000);
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', () => { goTo(current - 1); resetTimer(); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { goTo(current + 1); resetTimer(); });
+      dotsWrap.querySelectorAll('.cs-dot').forEach(d => d.addEventListener('click', resetTimer));
+    })();
+  </script>
+</body>
+</html>

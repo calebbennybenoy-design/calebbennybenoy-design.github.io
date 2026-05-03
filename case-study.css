@@ -1,0 +1,736 @@
+/* ============================================================
+   Case study pages — shared styles
+   ============================================================ */
+
+.container-narrow {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   Back link (nav right side)
+   ============================================================ */
+
+.nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  transition: color 0.2s var(--ease);
+}
+
+.nav-back svg { width: 14px; height: 14px; }
+.nav-back:hover { color: var(--grad-from); }
+
+/* ============================================================
+   Case study hero
+   ============================================================ */
+
+.cs-hero {
+  padding: 180px 0 100px;
+  text-align: center;
+  position: relative;
+}
+
+.cs-hero::before {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(0);
+  width: 1000px;
+  height: 600px;
+  background: radial-gradient(ellipse at center,
+    rgba(0, 97, 255, 0.08) 0%,
+    rgba(96, 215, 255, 0.05) 40%,
+    transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cs-hero .client-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--grad-from);
+  background: linear-gradient(135deg, rgba(0, 97, 255, 0.07), rgba(96, 215, 255, 0.10));
+  border: 1px solid rgba(0, 97, 255, 0.18);
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 28px;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: heroRise 0.8s var(--ease) 0.1s forwards;
+}
+
+.cs-hero h1 {
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+  max-width: 820px;
+  margin: 0 auto 32px;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroRise 0.9s var(--ease) 0.2s forwards;
+}
+
+.cs-hero .hook {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--text-soft);
+  max-width: 680px;
+  margin: 0 auto 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroRise 0.9s var(--ease) 0.4s forwards;
+}
+
+/* Stat pills */
+.cs-stats {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 52px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(16px);
+  animation: heroRise 0.8s var(--ease) 0.6s forwards;
+}
+
+.cs-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text);
+  background: rgba(0, 97, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 20px;
+}
+
+.cs-stat .stat-label {
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.cs-stat .stat-sep {
+  width: 1px;
+  height: 16px;
+  background: var(--border);
+}
+
+.cs-stat .stat-val {
+  font-weight: 500;
+}
+
+/* ============================================================
+   Two-column section layout
+   ============================================================ */
+
+.cs-section {
+  padding: 80px 0;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+.cs-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.cs-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  padding-top: 6px;
+  position: sticky;
+  top: 80px;
+}
+
+.cs-content h2 {
+  font-size: clamp(28px, 3.5vw, 38px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+}
+
+.cs-content p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-soft);
+  margin-bottom: 20px;
+  max-width: 680px;
+}
+
+.cs-content p:last-child { margin-bottom: 0; }
+
+/* Section dividers */
+.cs-section + .cs-section {
+  border-top: 1px solid var(--border);
+}
+
+/* ============================================================
+   Callout box
+   ============================================================ */
+
+.cs-callout {
+  margin-top: 36px;
+  padding: 28px 32px;
+  border-radius: 16px;
+  background: linear-gradient(135deg,
+    rgba(0, 97, 255, 0.05) 0%,
+    rgba(96, 215, 255, 0.06) 100%);
+  border: 1px solid rgba(0, 97, 255, 0.10);
+  border-left: 3px solid var(--grad-from);
+  max-width: 680px;
+}
+
+.cs-callout p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  font-weight: 450;
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   User flow diagram
+   ============================================================ */
+
+.cs-flow-wrap {
+  padding: 56px 0 24px;
+}
+
+.cs-flow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+}
+
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 0 1 auto;
+}
+
+.flow-box {
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  background: white;
+  border: 1.5px solid var(--border);
+  text-align: center;
+  white-space: nowrap;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.flow-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(10, 30, 80, 0.08);
+}
+
+.flow-sub {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.flow-box.decision {
+  background: linear-gradient(135deg, #fff7ed, #fef3c7);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: #92400e;
+}
+
+.flow-box.endpoint {
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #065f46;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  color: var(--text-muted);
+  padding-top: 10px;
+}
+
+.flow-arrow svg { width: 18px; height: 18px; }
+
+/* ============================================================
+   Design decisions list
+   ============================================================ */
+
+.cs-decisions { list-style: none; }
+
+.cs-decision {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 20px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cs-decision:first-child { padding-top: 0; }
+.cs-decision:last-child { border-bottom: none; }
+
+.cs-decision-num {
+  font-size: 28px;
+  font-weight: 700;
+  color: rgba(0, 97, 255, 0.18);
+  line-height: 1;
+  padding-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.cs-decision h3 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.cs-decision p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-soft);
+  max-width: 620px;
+}
+
+/* ============================================================
+   Screen carousel — full-width single image
+   ============================================================ */
+
+.cs-screens {
+  margin-top: 48px;
+}
+
+.cs-carousel-outer {
+  position: relative;
+}
+
+.cs-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  gap: 0;
+}
+
+.cs-carousel::-webkit-scrollbar { display: none; }
+
+.cs-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+}
+
+.cs-slide img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+}
+
+.cs-slide-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Arrow buttons */
+.cs-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(calc(-50% - 20px));
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s var(--ease), box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
+  box-shadow: 0 2px 10px rgba(10, 30, 80, 0.08);
+}
+
+.cs-arrow:hover {
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 97, 255, 0.14);
+  transform: translateY(calc(-50% - 20px)) scale(1.06);
+}
+
+.cs-arrow svg { width: 18px; height: 18px; color: var(--text); }
+
+.cs-arrow.prev { left: -24px; }
+.cs-arrow.next { right: -24px; }
+
+/* Carousel dots */
+.cs-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.cs-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(10, 30, 80, 0.12);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), width 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.cs-dot.active {
+  width: 32px;
+  background: rgba(0, 97, 255, 0.15);
+}
+
+.cs-dot::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: var(--grad-from);
+  pointer-events: none;
+}
+
+.cs-dot.active.filling::after {
+  animation: dotFill var(--carousel-speed, 5s) linear forwards;
+}
+
+@keyframes dotFill {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* ============================================================
+   Parallel user flow (two lanes)
+   ============================================================ */
+
+.cs-parallel-flows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding-top: 48px;
+}
+
+.cs-flow-lane {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.flow-lane-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cs-flow-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.flow-v-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.flow-v-step .flow-box {
+  width: 100%;
+  max-width: 260px;
+  text-align: center;
+}
+
+.flow-v-step .flow-sub { margin-bottom: 0; }
+
+.flow-v-arrow {
+  display: flex;
+  justify-content: center;
+  padding: 6px 0;
+  color: var(--text-muted);
+}
+
+.flow-v-arrow svg { width: 16px; height: 16px; }
+
+.flow-merge {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.flow-merge .flow-box {
+  max-width: 280px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ============================================================
+   Phone mockup carousel (2 visible)
+   ============================================================ */
+
+.cs-carousel.phone-carousel {
+  gap: 24px;
+  padding: 0 48px;
+}
+
+.cs-carousel.phone-carousel .cs-slide {
+  flex: 0 0 calc(50% - 12px);
+  min-width: 260px;
+}
+
+.cs-phone-frame {
+  background: #111;
+  border-radius: 36px;
+  padding: 12px;
+  border: 2px solid #222;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+.cs-phone-frame::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 24px;
+  background: #111;
+  border-radius: 0 0 14px 14px;
+  z-index: 2;
+}
+
+.cs-phone-frame img {
+  width: 100%;
+  display: block;
+  border-radius: 24px;
+}
+
+/* Phone carousel — no frame, raw image */
+.cs-carousel.phone-raw .cs-slide img {
+  width: 100%;
+  display: block;
+  border-radius: 0;
+}
+
+/* Paired phone slides — 2 phones per snap */
+.cs-carousel.phone-paired .cs-slide {
+  flex: 0 0 100%;
+}
+
+.cs-slide-phones {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+.cs-slide-phone {
+  flex: 0 1 45%;
+  max-width: 45%;
+}
+
+.cs-slide-phone img {
+  width: 100%;
+  display: block;
+}
+
+.cs-slide-phone .cs-slide-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* ============================================================
+   Reflection / quote box
+   ============================================================ */
+
+.cs-quote {
+  max-width: 700px;
+  padding: 48px 52px;
+  border-radius: 24px;
+  background: linear-gradient(135deg,
+    rgba(0, 97, 255, 0.04) 0%,
+    rgba(96, 215, 255, 0.06) 100%);
+  border: 1px solid rgba(0, 97, 255, 0.08);
+  position: relative;
+}
+
+.cs-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 700;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.3;
+}
+
+.cs-quote p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text);
+  font-weight: 450;
+  margin-bottom: 0;
+  max-width: none;
+}
+
+/* ============================================================
+   Next project strip
+   ============================================================ */
+
+.cs-next {
+  padding: 72px 0;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(135deg,
+    rgba(0, 97, 255, 0.03) 0%,
+    rgba(96, 215, 255, 0.04) 100%);
+}
+
+.cs-next-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.cs-next-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.cs-next-title {
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+/* ============================================================
+   Responsive — case study
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .container-narrow { padding: 0 24px; }
+
+  .cs-hero { padding: 140px 0 80px; }
+
+  .cs-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cs-label {
+    position: static;
+    padding-top: 0;
+  }
+
+  .cs-section { padding: 56px 0; }
+
+  .cs-flow {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+
+  .cs-flow::-webkit-scrollbar { display: none; }
+
+  .cs-arrow.prev { left: 8px; }
+  .cs-arrow.next { right: 8px; }
+
+  .cs-parallel-flows { grid-template-columns: 1fr; gap: 56px; }
+  .flow-merge { grid-column: auto; }
+
+  .cs-carousel.phone-carousel { padding: 0 24px; gap: 16px; }
+  .cs-carousel.phone-carousel .cs-slide { flex: 0 0 calc(50% - 8px); min-width: 200px; }
+  .cs-slide-phones { gap: 16px; padding: 0 12px; }
+  .cs-slide-phone { flex: 0 1 50%; max-width: 50%; }
+
+  .cs-quote { padding: 36px 32px; }
+  .cs-quote::before { font-size: 48px; top: 16px; left: 18px; }
+
+  .cs-next-inner { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 520px) {
+  .cs-hero h1 { font-size: 38px; }
+  .cs-stats { gap: 10px; }
+  .cs-stat { padding: 8px 14px; font-size: 13px; }
+  .flow-box { padding: 10px 14px; font-size: 12px; }
+  .flow-arrow { width: 24px; }
+  .flow-sub { font-size: 10px; }
+  .cs-arrow { width: 36px; height: 36px; }
+  .cs-arrow.prev { left: 4px; }
+  .cs-arrow.next { right: 4px; }
+  .cs-callout { padding: 22px 24px; }
+  .cs-decision { grid-template-columns: 32px 1fr; gap: 14px; }
+  .cs-decision-num { font-size: 22px; }
+}

@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WhatsApp Operations Monitor — Caleb Benny Benoy</title>
+  <meta name="description" content="Case study: WhatsApp Operations Monitor for Transguard Group, UAE. Product design by Caleb Benny Benoy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Caleb's Portfolio">
+        <span class="logo-mark">Caleb's</span>
+        <span class="logo-tail">Portfolio</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="cs-hero">
+    <div class="container-narrow">
+      <span class="client-pill">Transguard Group · UAE</span>
+      <h1>WhatsApp Operations Monitor</h1>
+      <p class="hook">Transguard runs thousands of security operations across the UAE. Every deployment had its own WhatsApp group. Nobody at headquarters could see any of them.</p>
+
+      <div class="cs-stats">
+        <div class="cs-stat">
+          <span class="stat-label">My Role</span>
+          <span class="stat-sep"></span>
+          <span class="stat-val">Product Designer</span>
+        </div>
+        <div class="cs-stat">
+          <span class="stat-label">Platform</span>
+          <span class="stat-sep"></span>
+          <span class="stat-val">Web Platform</span>
+        </div>
+        <div class="cs-stat">
+          <span class="stat-label">Year</span>
+          <span class="stat-sep"></span>
+          <span class="stat-val">2025</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- The Company -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">The Company</span>
+        <div class="cs-content">
+          <h2>About Transguard Group</h2>
+          <p>Transguard Group is one of the UAE's largest and most trusted security and manpower companies. With a workforce of over 60,000 employees, they provide security services across some of the most high-profile locations in the country — from malls and banks to airports and VIP operations. At this scale, coordination is everything.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">The Problem</span>
+        <div class="cs-content">
+          <h2>Operations running blind.</h2>
+          <p>Field managers naturally adopted WhatsApp groups to coordinate their teams. It was fast, familiar, and it worked on the ground. But it created a complete blind spot at the leadership level.</p>
+          <p>There was no way to know how many groups existed, what was being communicated, or whether operations were active. Every conversation was locked inside an individual manager's phone with no audit trail and no visibility for anyone above them.</p>
+
+          <div class="cs-callout">
+            <p><strong>The constraint:</strong> WhatsApp was deeply embedded in how guards actually worked. Any solution had to sit around the existing behaviour, not replace it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Research</span>
+        <div class="cs-content">
+          <h2>Understanding the workflow.</h2>
+          <p>I started by mapping how information actually moved through the organisation. Managers were screenshotting WhatsApp threads and emailing them to HQ — a clear signal that the need for central visibility was real but unmet.</p>
+          <p>Two primary users emerged. Operations managers at HQ needed a bird's-eye view across all deployments. Compliance and admin staff needed to audit communication logs and export records for reporting.</p>
+          <p>I used Claude to model the different user scenarios and stress-test the information hierarchy — specifically what needed to surface at the list level versus what could live a level deeper on demand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- User Flow -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">User Flow</span>
+        <div class="cs-content">
+          <h2>How a manager navigates the system.</h2>
+        </div>
+      </div>
+
+      <div class="cs-flow-wrap">
+        <div class="cs-flow">
+          <div class="flow-step">
+            <div class="flow-box">Login</div>
+            <span class="flow-sub">SSO authentication</span>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="14 7 19 12 14 17"></polyline></svg></div>
+          <div class="flow-step">
+            <div class="flow-box">Groups List</div>
+            <span class="flow-sub">Scan all operations</span>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="14 7 19 12 14 17"></polyline></svg></div>
+          <div class="flow-step">
+            <div class="flow-box decision">Filter / Search</div>
+            <span class="flow-sub">By dept, status, or ID</span>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="14 7 19 12 14 17"></polyline></svg></div>
+          <div class="flow-step">
+            <div class="flow-box">Open Group</div>
+            <span class="flow-sub">View message log</span>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="14 7 19 12 14 17"></polyline></svg></div>
+          <div class="flow-step">
+            <div class="flow-box">Expand Message</div>
+            <span class="flow-sub">Read content & media</span>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="14 7 19 12 14 17"></polyline></svg></div>
+          <div class="flow-step">
+            <div class="flow-box endpoint">Export / Review</div>
+            <span class="flow-sub">Audit and report</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Decisions -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Design Decisions</span>
+        <div class="cs-content">
+          <h2>Every choice had a reason.</h2>
+
+          <ol class="cs-decisions">
+            <li class="cs-decision">
+              <span class="cs-decision-num">01</span>
+              <div>
+                <h3>Read-only by design</h3>
+                <p>Making the system purely a monitor with no send capability. Adding a send feature would have created a parallel communication channel that confused the existing workflow. The system's job was to observe, not intervene.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">02</span>
+              <div>
+                <h3>Table layout over cards</h3>
+                <p>Early explorations used cards. After recognising that the primary behaviour was scanning and comparing rather than browsing, I switched to a dense data table. Managers can assess 20 groups at a glance.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">03</span>
+              <div>
+                <h3>Inline message expansion</h3>
+                <p>Clicking a message expands a detail panel inline rather than navigating away. Keeps the full log visible for context while revealing sender info, full text, and media.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">04</span>
+              <div>
+                <h3>Split-pane media viewer</h3>
+                <p>When a message contains media, the expanded view splits — text left, media carousel right. Separating them entirely would have broken the connection between what was said and what was sent.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">05</span>
+              <div>
+                <h3>Message type as scannable data</h3>
+                <p>Each message tagged as Text, Media, Poll, or Contact. Lets auditors filter for specific evidence without reading every message.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screens -->
+  <section class="cs-section cs-screens reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Screens</span>
+        <div class="cs-content"></div>
+      </div>
+    </div>
+
+    <div class="container" style="max-width:1200px">
+      <div class="cs-carousel-outer">
+        <button class="cs-arrow prev" id="carouselPrev" aria-label="Previous screen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </button>
+        <button class="cs-arrow next" id="carouselNext" aria-label="Next screen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+
+        <div class="cs-carousel" id="carousel">
+          <div class="cs-slide">
+            <img src="images/tg-groups.png" alt="Groups main page" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">Groups overview — all operations at a glance</p>
+          </div>
+          <div class="cs-slide">
+            <img src="images/tg-filter.png" alt="Groups filter dropdown" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">Filter controls — narrow by department or status</p>
+          </div>
+          <div class="cs-slide">
+            <img src="images/tg-messages-preview.png" alt="Group expanded with messages preview" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">Expanded group — inline message preview</p>
+          </div>
+          <div class="cs-slide">
+            <img src="images/tg-messages.png" alt="Group expanded with messages" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">Message log — full detail view</p>
+          </div>
+          <div class="cs-slide">
+            <img src="images/tg-members.png" alt="Group members page" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">Group members — who's in each deployment</p>
+          </div>
+          <div class="cs-slide">
+            <img src="images/tg-messages-full.png" alt="Messages page full preview" loading="lazy" decoding="async" />
+            <p class="cs-slide-label">Messages page — expanded audit view</p>
+          </div>
+        </div>
+        <div class="cs-dots" id="carouselDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reflection -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Reflection</span>
+        <div class="cs-content">
+          <div class="cs-quote">
+            <p>The most valuable design decision on this project was not a UI choice. It was the decision to not build a send feature. Restraint is harder than addition, and here it was the right call.</p>
+            <p style="margin-top:16px">If I were to revisit this, I'd explore a notification layer — alerting HQ when a group goes suddenly quiet or unusually active, rather than requiring someone to manually check. Monitoring is reactive. The next step is making it proactive.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Project -->
+  <div class="cs-next reveal">
+    <div class="container-narrow">
+      <div class="cs-next-inner">
+        <div>
+          <p class="cs-next-label">Next project</p>
+          <h3 class="cs-next-title">People Management Platform</h3>
+        </div>
+        <a href="project-2.html" class="btn btn-primary">View case study
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 Caleb Benny Benoy</span>
+      <span>Designed with intention.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (() => {
+      const carousel = document.getElementById('carousel');
+      const dotsWrap = document.getElementById('carouselDots');
+      const prevBtn = document.getElementById('carouselPrev');
+      const nextBtn = document.getElementById('carouselNext');
+      if (!carousel || !dotsWrap) return;
+
+      const slides = carousel.querySelectorAll('.cs-slide');
+      let current = 0;
+
+      function goTo(i) {
+        i = Math.max(0, Math.min(i, slides.length - 1));
+        slides[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      }
+
+      slides.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.classList.add('cs-dot');
+        d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        if (i === 0) d.classList.add('active');
+        d.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(d);
+      });
+
+      const dots = dotsWrap.querySelectorAll('.cs-dot');
+
+      function syncDots() {
+        dots.forEach((d, di) => {
+          d.classList.toggle('active', di === current);
+          d.classList.remove('filling');
+        });
+        void dots[current].offsetWidth;
+        dots[current].classList.add('filling');
+      }
+
+      const cio = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            current = [...slides].indexOf(e.target);
+            syncDots();
+          }
+        });
+      }, { root: carousel, threshold: 0.6 });
+
+      slides.forEach((s) => cio.observe(s));
+      syncDots();
+
+      let sectionVisible = false;
+      const sio = new IntersectionObserver(([e]) => {
+        sectionVisible = e.isIntersecting;
+      }, { threshold: 0.3 });
+      sio.observe(carousel.closest('.cs-screens'));
+
+      let timer = setInterval(advance, 5000);
+      function advance() {
+        if (!sectionVisible) return;
+        goTo(current + 1 >= slides.length ? 0 : current + 1);
+      }
+      function resetTimer() {
+        clearInterval(timer);
+        syncDots();
+        timer = setInterval(advance, 5000);
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', () => { goTo(current - 1); resetTimer(); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { goTo(current + 1); resetTimer(); });
+      dotsWrap.querySelectorAll('.cs-dot').forEach(d => d.addEventListener('click', resetTimer));
+    })();
+  </script>
+</body>
+</html>

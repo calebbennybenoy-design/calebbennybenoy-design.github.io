@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visitor Management System — Caleb Benny Benoy</title>
+  <meta name="description" content="Case study: Visitor Management System for SASI Product, South Africa. Product design by Caleb Benny Benoy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Caleb's Portfolio">
+        <span class="logo-mark">Caleb's</span>
+        <span class="logo-tail">Portfolio</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="cs-hero">
+    <div class="container-narrow">
+      <span class="client-pill">SASI Product · South Africa</span>
+      <h1>Visitor Management System</h1>
+      <p class="hook">Security guards at residential complexes and office buildings across South Africa were managing visitor entry with a pen and a logbook. We designed a product to change that — without making the guard's job any harder.</p>
+
+      <div class="cs-stats">
+        <div class="cs-stat">
+          <span class="stat-label">My Role</span>
+          <span class="stat-sep"></span>
+          <span class="stat-val">Product Designer</span>
+        </div>
+        <div class="cs-stat">
+          <span class="stat-label">Platform</span>
+          <span class="stat-sep"></span>
+          <span class="stat-val">Mobile App</span>
+        </div>
+        <div class="cs-stat">
+          <span class="stat-label">Year</span>
+          <span class="stat-sep"></span>
+          <span class="stat-val">2025</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- The Product -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">The Product</span>
+        <div class="cs-content">
+          <h2>A new SASI product for South Africa</h2>
+          <p>This was not a client brief — it was a product opportunity. SASI identified that security companies across South Africa had no reliable digital solution for visitor check-in at residential complexes and commercial buildings. Guards were logging visitors by hand, making judgment calls on unregistered guests, and leaving no reliable audit trail.</p>
+          <p>I led the UX design and flow architecture on this project. A junior designer handled prototyping and usability testing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">The Problem</span>
+        <div class="cs-content">
+          <h2>Paper, gut feel, and no record.</h2>
+          <p>The check-in process had two distinct failure modes. For pre-registered visitors — people a resident had already approved — the guard still had no quick way to verify them beyond memory or a paper list. For unregistered visitors — a delivery driver, a one-time guest — there was no process at all.</p>
+          <p>Guards were making calls based on gut feel and writing names in a logbook that nobody ever reviewed. The process was slow, inconsistent, and left no audit trail that meant anything.</p>
+
+          <div class="cs-callout">
+            <p><strong>The design question</strong> was not what information should be collected. It was what does a guard need to know in 10 seconds to make a confident, correct decision.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Research</span>
+        <div class="cs-content">
+          <h2>Starting with the guard, not the screen.</h2>
+          <p>I started by mapping every visitor scenario a guard might face — a returning resident visitor with pre-approval, a one-time delivery, an unregistered walk-in, a rejected visitor who disputes it at the gate. Each scenario had different information needs, different emotional stakes, and a different required action.</p>
+          <p>I used Claude to stress-test each scenario and surface the edge cases — what if the visitor is in the system but with the wrong ID, what if the approval has expired, what if the guard needs to escalate. This prevented assumptions from becoming design decisions.</p>
+          <p>The flow was validated before a single screen was designed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- User Flow -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">User Flow</span>
+        <div class="cs-content">
+          <h2>Two paths. One goal.</h2>
+        </div>
+      </div>
+
+      <div class="cs-parallel-flows">
+        <!-- Flow A — Returning visitor -->
+        <div class="cs-flow-lane">
+          <p class="flow-lane-label">Returning visitor</p>
+          <div class="cs-flow-vertical">
+            <div class="flow-v-step"><div class="flow-box">Open App</div></div>
+            <div class="flow-v-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="7 14 12 19 17 14"></polyline></svg></div>
+            <div class="flow-v-step"><div class="flow-box">Visitor Check-In</div></div>
+            <div class="flow-v-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="7 14 12 19 17 14"></polyline></svg></div>
+            <div class="flow-v-step"><div class="flow-box">Enter ID Number</div></div>
+            <div class="flow-v-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="7 14 12 19 17 14"></polyline></svg></div>
+            <div class="flow-v-step"><div class="flow-box decision">View Result</div><span class="flow-sub">Approved, Pending, or Rejected</span></div>
+            <div class="flow-v-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="7 14 12 19 17 14"></polyline></svg></div>
+            <div class="flow-v-step"><div class="flow-box">Capture Photo</div></div>
+          </div>
+        </div>
+
+        <!-- Flow B — New visitor -->
+        <div class="cs-flow-lane">
+          <p class="flow-lane-label">New visitor</p>
+          <div class="cs-flow-vertical">
+            <div class="flow-v-step"><div class="flow-box">Open App</div></div>
+            <div class="flow-v-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="7 14 12 19 17 14"></polyline></svg></div>
+            <div class="flow-v-step"><div class="flow-box">Register Visitor</div></div>
+            <div class="flow-v-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="7 14 12 19 17 14"></polyline></svg></div>
+            <div class="flow-v-step"><div class="flow-box">Fill In Details</div><span class="flow-sub">Name, phone, ID, unit, type</span></div>
+            <div class="flow-v-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="7 14 12 19 17 14"></polyline></svg></div>
+            <div class="flow-v-step"><div class="flow-box">Capture Photo</div></div>
+            <div class="flow-v-arrow" style="visibility:hidden"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line></svg></div>
+            <div class="flow-v-step" style="visibility:hidden"><div class="flow-box">Spacer</div></div>
+          </div>
+        </div>
+
+        <!-- Shared endpoint -->
+        <div class="flow-merge">
+          <div class="flow-v-step"><div class="flow-box endpoint">Visitor Checked In</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Decisions -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Design Decisions</span>
+        <div class="cs-content">
+          <h2>Minimum input. Maximum confidence.</h2>
+
+          <ol class="cs-decisions">
+            <li class="cs-decision">
+              <span class="cs-decision-num">01</span>
+              <div>
+                <h3>Two entry paths from the start</h3>
+                <p>Separating Check-In and Register Visitor upfront mirrors how guards already think. Is this person expected or are they new? Combining both into one flow would have created confusion at the moment that matters most.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">02</span>
+              <div>
+                <h3>ID number as primary input</h3>
+                <p>Names are ambiguous, misspelled, or go by nicknames. ID numbers are unique and unambiguous. The guard asks for an ID, types the number, gets a result. No interpretation required.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">03</span>
+              <div>
+                <h3>Border colour as instant decision signal</h3>
+                <p>The result card communicates the answer before the guard reads a word. Green border means approved. Red means rejected. Yellow means pending. The detail below is for confirmation, not for making the decision.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">04</span>
+              <div>
+                <h3>Rejected and pending states include Call Support</h3>
+                <p>A guard faced with an ambiguous entry decision needs a clear escalation path, not a dead end. Call Support gives them somewhere to go without having to improvise.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">05</span>
+              <div>
+                <h3>Capture Photo disabled until form is complete</h3>
+                <p>On the manual registration flow, the photo button stays inactive until all required fields are filled. Guards cannot skip ahead to the fastest part of the process without completing the record first. Data quality enforced without a warning message.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">06</span>
+              <div>
+                <h3>Full screen success state</h3>
+                <p>After a successful check-in, the guard does not need options or navigation. They need clear confirmation and a fast path to the next visitor. One screen. One message. One button.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screens -->
+  <section class="cs-section cs-screens reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Screens</span>
+        <div class="cs-content"></div>
+      </div>
+    </div>
+
+    <div class="container" style="max-width:1000px">
+      <div class="cs-carousel-outer">
+        <button class="cs-arrow prev" id="carouselPrev" aria-label="Previous screen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </button>
+        <button class="cs-arrow next" id="carouselNext" aria-label="Next screen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+
+        <div class="cs-carousel phone-carousel phone-raw phone-paired" id="carousel" style="--carousel-speed:8s">
+          <div class="cs-slide">
+            <div class="cs-slide-phones">
+              <div class="cs-slide-phone">
+                <img src="images/vm-checkin.png" alt="Visitor check-in method selection" loading="lazy" decoding="async" />
+                <p class="cs-slide-label">Check-in method — two clear paths</p>
+              </div>
+              <div class="cs-slide-phone">
+                <img src="images/vm-enter-id.png" alt="Enter visitor ID number" loading="lazy" decoding="async" />
+                <p class="cs-slide-label">Enter ID — manual number input</p>
+              </div>
+            </div>
+          </div>
+          <div class="cs-slide">
+            <div class="cs-slide-phones">
+              <div class="cs-slide-phone">
+                <img src="images/vm-enter-id-error.png" alt="ID not found error state" loading="lazy" decoding="async" />
+                <p class="cs-slide-label">Error state — ID not found</p>
+              </div>
+              <div class="cs-slide-phone">
+                <img src="images/vm-approved.png" alt="Visitor approved result" loading="lazy" decoding="async" />
+                <p class="cs-slide-label">Approved — green border, clear signal</p>
+              </div>
+            </div>
+          </div>
+          <div class="cs-slide">
+            <div class="cs-slide-phones">
+              <div class="cs-slide-phone">
+                <img src="images/vm-pending.png" alt="Visitor pending result" loading="lazy" decoding="async" />
+                <p class="cs-slide-label">Pending — awaiting confirmation</p>
+              </div>
+              <div class="cs-slide-phone">
+                <img src="images/vm-rejected.png" alt="Visitor rejected result" loading="lazy" decoding="async" />
+                <p class="cs-slide-label">Rejected — red border, escalation path</p>
+              </div>
+            </div>
+          </div>
+          <div class="cs-slide">
+            <div class="cs-slide-phones">
+              <div class="cs-slide-phone">
+                <img src="images/vm-scan.png" alt="Scan ID camera screen" loading="lazy" decoding="async" />
+                <p class="cs-slide-label">Scan ID — camera-based entry</p>
+              </div>
+              <div class="cs-slide-phone">
+                <img src="images/vm-complete.png" alt="Process completed" loading="lazy" decoding="async" />
+                <p class="cs-slide-label">Success — full screen confirmation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-dots" id="carouselDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reflection -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Reflection</span>
+        <div class="cs-content">
+          <div class="cs-quote">
+            <p>The border colour on the result card sounds obvious in hindsight. It always does. But early versions communicated status only through the pill badge — and in testing, guards were reading the text before they had processed the outcome. Moving the signal to the border meant the entire card communicated the answer the moment it appeared. That is the difference between a design that works and a design that is fast.</p>
+            <p style="margin-top:16px">If I were to revisit this, I would explore a recurring visitor mode — a faster path for people who check in regularly, where the guard can confirm identity with a single tap rather than re-entering an ID every time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Previous Project -->
+  <div class="cs-next reveal">
+    <div class="container-narrow">
+      <div class="cs-next-inner">
+        <div>
+          <p class="cs-next-label">Previous project</p>
+          <h3 class="cs-next-title">Incident Report Approval</h3>
+        </div>
+        <a href="project-3.html" class="btn btn-outline">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          View case study
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 Caleb Benny Benoy</span>
+      <span>Designed with intention.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (() => {
+      const carousel = document.getElementById('carousel');
+      const dotsWrap = document.getElementById('carouselDots');
+      const prevBtn = document.getElementById('carouselPrev');
+      const nextBtn = document.getElementById('carouselNext');
+      if (!carousel || !dotsWrap) return;
+
+      const slides = carousel.querySelectorAll('.cs-slide');
+      let current = 0;
+
+      function goTo(i) {
+        i = Math.max(0, Math.min(i, slides.length - 1));
+        slides[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      }
+
+      slides.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.classList.add('cs-dot');
+        d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        if (i === 0) d.classList.add('active');
+        d.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(d);
+      });
+
+      const dots = dotsWrap.querySelectorAll('.cs-dot');
+
+      function syncDots() {
+        dots.forEach((d, di) => {
+          d.classList.toggle('active', di === current);
+          d.classList.remove('filling');
+        });
+        void dots[current].offsetWidth;
+        dots[current].classList.add('filling');
+      }
+
+      const cio = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            current = [...slides].indexOf(e.target);
+            syncDots();
+          }
+        });
+      }, { root: carousel, threshold: 0.6 });
+
+      slides.forEach((s) => cio.observe(s));
+      syncDots();
+
+      let sectionVisible = false;
+      const sio = new IntersectionObserver(([e]) => {
+        sectionVisible = e.isIntersecting;
+      }, { threshold: 0.3 });
+      sio.observe(carousel.closest('.cs-screens'));
+
+      let timer = setInterval(advance, 8000);
+      function advance() {
+        if (!sectionVisible) return;
+        goTo(current + 1 >= slides.length ? 0 : current + 1);
+      }
+      function resetTimer() {
+        clearInterval(timer);
+        syncDots();
+        timer = setInterval(advance, 8000);
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', () => { goTo(current - 1); resetTimer(); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { goTo(current + 1); resetTimer(); });
+      dotsWrap.querySelectorAll('.cs-dot').forEach(d => d.addEventListener('click', resetTimer));
+    })();
+  </script>
+</body>
+</html>

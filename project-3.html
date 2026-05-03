@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Incident Report Approval — Caleb Benny Benoy</title>
+  <meta name="description" content="Case study: Incident Report Approval module for Spark Security, UAE. Product design by Caleb Benny Benoy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Caleb's Portfolio">
+        <span class="logo-mark">Caleb's</span>
+        <span class="logo-tail">Portfolio</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="cs-hero">
+    <div class="container-narrow">
+      <span class="client-pill">Spark Security · UAE</span>
+      <h1>Incident Report Approval</h1>
+      <p class="hook">When a security incident happens on the ground, the paperwork that follows is just as critical as the response. Spark Security needed a faster, clearer way for supervisors to review, assess, and sign off. From their phone, in the field, in real time.</p>
+
+      <div class="cs-stats">
+        <div class="cs-stat">
+          <span class="stat-label">My Role</span>
+          <span class="stat-sep"></span>
+          <span class="stat-val">Product Designer</span>
+        </div>
+        <div class="cs-stat">
+          <span class="stat-label">Platform</span>
+          <span class="stat-sep"></span>
+          <span class="stat-val">Mobile App</span>
+        </div>
+        <div class="cs-stat">
+          <span class="stat-label">Year</span>
+          <span class="stat-sep"></span>
+          <span class="stat-val">2025</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- The Company -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">The Company</span>
+        <div class="cs-content">
+          <h2>About Spark Security</h2>
+          <p>Spark Security is a UAE-based security company managing guards deployed across commercial sites including malls, office buildings, and public spaces. Like many companies in the sector, their incident reporting process was largely paper-based. Guards would call in incidents, fill physical forms, or send photos over WhatsApp to supervisors.</p>
+          <p>This module was part of a larger mobile operations platform built by SASI. I led the UX on this particular module alongside a junior designer who handled prototyping and usability testing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">The Problem</span>
+        <div class="cs-content">
+          <h2>Too much information. Not enough clarity.</h2>
+          <p>When an incident occurred on site — a medical emergency, an injury, a fire, a near miss — a guard would file a report through the Spark Security Guard app. That report then entered a supervisor's approval queue.</p>
+          <p>The challenge was that supervisors are mobile. They are managing multiple sites, often checking reports early in the morning or between shifts, on their phone, with limited time and attention. The existing process gave them too much to read and no clear path to action. Reports were delayed. Sign-offs were missed.</p>
+
+          <div class="cs-callout">
+            <p><strong>The core tension:</strong> the report carries a lot of information. But a supervisor scanning a queue at 6am does not need all of it immediately. The design needed to surface the right information at the right moment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Research</span>
+        <div class="cs-content">
+          <h2>Designing for the field, not the office.</h2>
+          <p>The central question I started with was simple: what does a supervisor actually need to know in the seconds it takes to decide whether to act on a report? Not what information exists about the incident — but what is the minimum needed to make a confident, correct decision.</p>
+          <p>I mapped the full incident lifecycle from the guard filing the report through to the branch manager's final sign-off, identifying every decision point and every role involved.</p>
+          <p>I used Claude to stress-test edge cases — what if the supervisor is not on site, what if the incident is disputed, what if the branch manager needs to escalate. This helped define not just the UI states but the exact copy and actions needed at each outcome.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- User Flow -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">User Flow</span>
+        <div class="cs-content">
+          <h2>From incident to approval.</h2>
+        </div>
+      </div>
+
+      <div class="cs-flow-wrap">
+        <div class="cs-flow">
+          <div class="flow-step">
+            <div class="flow-box">Guard Files Report</div>
+            <span class="flow-sub">Via Guard app</span>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="14 7 19 12 14 17"></polyline></svg></div>
+          <div class="flow-step">
+            <div class="flow-box">Enters Queue</div>
+            <span class="flow-sub">Supervisor notified</span>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="14 7 19 12 14 17"></polyline></svg></div>
+          <div class="flow-step">
+            <div class="flow-box">Review List</div>
+            <span class="flow-sub">Scan incident cards</span>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="14 7 19 12 14 17"></polyline></svg></div>
+          <div class="flow-step">
+            <div class="flow-box">Open Details</div>
+            <span class="flow-sub">Full report view</span>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="14 7 19 12 14 17"></polyline></svg></div>
+          <div class="flow-step">
+            <div class="flow-box decision">Approve / Reject</div>
+            <span class="flow-sub">Decision point</span>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="14 7 19 12 14 17"></polyline></svg></div>
+          <div class="flow-step">
+            <div class="flow-box">Supervisor Signs</div>
+            <span class="flow-sub">Digital signature</span>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="14 7 19 12 14 17"></polyline></svg></div>
+          <div class="flow-step">
+            <div class="flow-box endpoint">Manager Countersigns</div>
+            <span class="flow-sub">Final sign-off</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Decisions -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Design Decisions</span>
+        <div class="cs-content">
+          <h2>Built for speed and clarity.</h2>
+
+          <ol class="cs-decisions">
+            <li class="cs-decision">
+              <span class="cs-decision-num">01</span>
+              <div>
+                <h3>Colour coded incident cards</h3>
+                <p>Each incident type has a colour dot — red for First Aid Medical, purple for Lost Time/Injury, blue for Observation, orange for Fire and Near Miss. Supervisors get a visual severity read before they read a single word.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">02</span>
+              <div>
+                <h3>Accordion detail page</h3>
+                <p>Rather than one long scroll that buried the Sign action, collapsing non-critical sections keeps the page manageable. The supervisor expands only what they need.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">03</span>
+              <div>
+                <h3>Sticky Sign CTA</h3>
+                <p>The primary action button stays fixed at the bottom of the screen regardless of which section is open. The supervisor never has to scroll to find it.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">04</span>
+              <div>
+                <h3>GPS capture indicator</h3>
+                <p>An onsite report flag gives supervisors confidence the report was filed from the actual location, reducing the chance of backdated or off-site submissions.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">05</span>
+              <div>
+                <h3>Tiered signature model</h3>
+                <p>Supervisor signs first. Branch Manager signature is locked until the supervisor has signed. The locked state communicates role-gating clearly without error messages or extra instructions.</p>
+              </div>
+            </li>
+            <li class="cs-decision">
+              <span class="cs-decision-num">06</span>
+              <div>
+                <h3>Collapsing search bar</h3>
+                <p>The search bar collapses to an icon by default. Most supervisors scan rather than search. Screen real estate on mobile is limited and every pixel counts.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screens -->
+  <section class="cs-section cs-screens reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Screens</span>
+        <div class="cs-content"></div>
+      </div>
+    </div>
+
+    <div class="container" style="max-width:1000px">
+      <div class="cs-carousel-outer">
+        <button class="cs-arrow prev" id="carouselPrev" aria-label="Previous screen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </button>
+        <button class="cs-arrow next" id="carouselNext" aria-label="Next screen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+
+        <div class="cs-carousel phone-carousel phone-raw phone-paired" id="carousel" style="--carousel-speed:8s">
+          <div class="cs-slide">
+            <div class="cs-slide-phones">
+              <div class="cs-slide-phone">
+                <img src="images/spark-approval.png" alt="Supervisor approval screen" loading="lazy" decoding="async" />
+                <p class="cs-slide-label">Approval queue — colour-coded cards</p>
+              </div>
+              <div class="cs-slide-phone">
+                <img src="images/spark-search.png" alt="Approval screen with search bar" loading="lazy" decoding="async" />
+                <p class="cs-slide-label">Search expanded — filter by incident</p>
+              </div>
+            </div>
+          </div>
+          <div class="cs-slide">
+            <div class="cs-slide-phones">
+              <div class="cs-slide-phone">
+                <img src="images/spark-detail.png" alt="Incident detail expanded" loading="lazy" decoding="async" />
+                <p class="cs-slide-label">Detail view — accordion, sticky CTA</p>
+              </div>
+              <div class="cs-slide-phone">
+                <img src="images/spark-signed.png" alt="Incident signed screen" loading="lazy" decoding="async" />
+                <p class="cs-slide-label">Signed — tiered signature complete</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-dots" id="carouselDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reflection -->
+  <section class="cs-section reveal">
+    <div class="container-narrow">
+      <div class="cs-row">
+        <span class="cs-label">Reflection</span>
+        <div class="cs-content">
+          <div class="cs-quote">
+            <p>The sticky Sign button sounds like a small decision. It was not. Supervisors told us they felt more confident acting on a report when the action was always visible — even while they were still reading. Presence communicates readiness. That is the kind of detail that does not show up in a brief but makes all the difference in use.</p>
+            <p style="margin-top:16px">If I were to revisit this, I would explore a way to flag reports that have been sitting in the queue too long — a quiet urgency indicator that prompts action without creating anxiety.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Project -->
+  <div class="cs-next reveal">
+    <div class="container-narrow">
+      <div class="cs-next-inner">
+        <div>
+          <p class="cs-next-label">Next project</p>
+          <h3 class="cs-next-title">Visitor Management System</h3>
+        </div>
+        <a href="project-4.html" class="btn btn-primary">View case study
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 Caleb Benny Benoy</span>
+      <span>Designed with intention.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (() => {
+      const carousel = document.getElementById('carousel');
+      const dotsWrap = document.getElementById('carouselDots');
+      const prevBtn = document.getElementById('carouselPrev');
+      const nextBtn = document.getElementById('carouselNext');
+      if (!carousel || !dotsWrap) return;
+
+      const slides = carousel.querySelectorAll('.cs-slide');
+      let current = 0;
+
+      function goTo(i) {
+        i = Math.max(0, Math.min(i, slides.length - 1));
+        slides[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      }
+
+      slides.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.classList.add('cs-dot');
+        d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        if (i === 0) d.classList.add('active');
+        d.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(d);
+      });
+
+      const dots = dotsWrap.querySelectorAll('.cs-dot');
+
+      function syncDots() {
+        dots.forEach((d, di) => {
+          d.classList.toggle('active', di === current);
+          d.classList.remove('filling');
+        });
+        void dots[current].offsetWidth;
+        dots[current].classList.add('filling');
+      }
+
+      const cio = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            current = [...slides].indexOf(e.target);
+            syncDots();
+          }
+        });
+      }, { root: carousel, threshold: 0.6 });
+
+      slides.forEach((s) => cio.observe(s));
+      syncDots();
+
+      let sectionVisible = false;
+      const sio = new IntersectionObserver(([e]) => {
+        sectionVisible = e.isIntersecting;
+      }, { threshold: 0.3 });
+      sio.observe(carousel.closest('.cs-screens'));
+
+      let timer = setInterval(advance, 8000);
+      function advance() {
+        if (!sectionVisible) return;
+        goTo(current + 1 >= slides.length ? 0 : current + 1);
+      }
+      function resetTimer() {
+        clearInterval(timer);
+        syncDots();
+        timer = setInterval(advance, 5000);
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', () => { goTo(current - 1); resetTimer(); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { goTo(current + 1); resetTimer(); });
+      dotsWrap.querySelectorAll('.cs-dot').forEach(d => d.addEventListener('click', resetTimer));
+    })();
+  </script>
+</body>
+</html>
