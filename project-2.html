@@ -36,7 +36,7 @@
     <div class="container-narrow">
       <span class="client-pill">New Apostolic Church · Zambia / Malawi / Zimbabwe</span>
       <h1>People Management Platform</h1>
-      <p class="hook">A church of hundreds of thousands of members across three countries had no central system for managing its people. Every congregation operated independently — on paper, in spreadsheets, or from memory.</p>
+      <p class="hook">A church of hundreds of thousands of members across three countries had no central system for managing its people. Every congregation operated independently, whether on paper, in spreadsheets, or from memory.</p>
 
       <div class="cs-stats">
         <div class="cs-stat">
@@ -65,7 +65,7 @@
         <span class="cs-label">The Organisation</span>
         <div class="cs-content">
           <h2>About the New Apostolic Church</h2>
-          <p>The New Apostolic Church is one of the largest Christian denominations in sub-Saharan Africa. Across Zambia, Malawi, and Zimbabwe, the church operates through a deep hierarchy — from national Apostle down through District Elders, Congregations, and individual members. Every level has different responsibilities, different visibility, and different data needs. Until this project, none of it was connected.</p>
+          <p>The New Apostolic Church is one of the largest Christian denominations in sub-Saharan Africa. Across Zambia, Malawi, and Zimbabwe, the church operates through a deep hierarchy that runs from the national Apostle down through District Elders, Congregations, and individual members. Every level has different responsibilities, different visibility, and different data needs. Until this project, none of it was connected.</p>
         </div>
       </div>
     </div>
@@ -79,10 +79,10 @@
         <div class="cs-content">
           <h2>Disconnected by design.</h2>
           <p>Each congregation managed its own member records independently. Some used paper registers. Others used personal spreadsheets. Many relied on the memory of the local elder. There was no way for leadership at the district or national level to see who belonged to which congregation, track attendance patterns, or coordinate events across regions.</p>
-          <p>When a member moved from one congregation to another — which happened often — their record simply disappeared. The church had no single source of truth for its own people.</p>
+          <p>When a member moved from one congregation to another, which happened often, their record simply disappeared. The church had no single source of truth for its own people.</p>
 
           <div class="cs-callout">
-            <p><strong>The constraint:</strong> The permission model had to mirror the church's own hierarchy exactly. A congregation leader should never see data from another congregation. A district elder should see all congregations in their district — and nothing outside it.</p>
+            <p><strong>The constraint:</strong> The permission model had to mirror the church's own hierarchy exactly. A congregation leader should never see data from another congregation. A district elder should see all congregations in their district, and nothing outside it.</p>
           </div>
         </div>
       </div>
@@ -96,9 +96,9 @@
         <span class="cs-label">Research</span>
         <div class="cs-content">
           <h2>Mapping the invisible structure.</h2>
-          <p>The first thing I did was map the church's organisational hierarchy — not as an org chart, but as a permission tree. Every role had implicit rules about what they could see, who they could manage, and what actions they were allowed to take. These rules were understood culturally but had never been written down.</p>
-          <p>I interviewed church administrators at multiple levels to understand their actual workflows. The national office needed reporting and oversight. District elders needed member transfers and event coordination. Congregation leaders needed attendance tracking and member profiles. Each level had different tasks, different frequencies, and different comfort levels with technology.</p>
-          <p>I used Claude to model the permission scenarios and catch conflicts — what happens when a member belongs to a choir that spans two congregations? What if a district elder is also a congregation member? These edge cases shaped the data model before any UI work began.</p>
+          <p>The first step was mapping the church's organisational hierarchy, not as an org chart, but as a permission tree. Every role had implicit rules about what they could see, who they could manage, and what actions they were allowed to take. These rules were understood culturally but had never been written down.</p>
+          <p>We worked closely with church administrators at multiple levels to understand their actual workflows. The national office needed reporting and oversight. District elders needed member transfers and event coordination. Congregation leaders needed attendance tracking and member profiles. Each level had different tasks, different frequencies, and different comfort levels with technology.</p>
+          <p>I used Claude to model the permission scenarios and catch conflicts. Questions like what happens when a member belongs to a choir that spans two congregations, or what if a district elder is also a congregation member, shaped the data model before any UI work began.</p>
         </div>
       </div>
     </div>
@@ -117,14 +117,14 @@
               <span class="cs-decision-num">01</span>
               <div>
                 <h3>Hierarchy as the navigation model</h3>
-                <p>The sidebar and filtering system mirrors the church's own structure — Country, District, Congregation. Users don't learn a new mental model. They navigate the system the same way they think about their organisation.</p>
+                <p>The sidebar and filtering system mirrors the church's own structure: Country, District, Congregation. Users don't learn a new mental model. They navigate the system the same way they think about their organisation.</p>
               </div>
             </li>
             <li class="cs-decision">
               <span class="cs-decision-num">02</span>
               <div>
                 <h3>Congregation filter as default scope</h3>
-                <p>Every user lands on their own congregation's data by default. The filter is there to expand scope upward for users with permission — not to narrow down from a global view. This prevents information overload and respects the permission model.</p>
+                <p>Every user lands on their own congregation's data by default. The filter exists to expand scope upward for users with permission, not to narrow down from a global view. This prevents information overload and respects the permission model.</p>
               </div>
             </li>
             <li class="cs-decision">
@@ -145,7 +145,7 @@
               <span class="cs-decision-num">05</span>
               <div>
                 <h3>Invite flow with role assignment</h3>
-                <p>New users are invited by someone above them in the hierarchy and assigned a role at the point of invitation. This ensures every account enters the system with the correct permissions — no manual configuration after the fact.</p>
+                <p>New users are invited by someone above them in the hierarchy and assigned a role at the point of invitation. This ensures every account enters the system with the correct permissions, with no manual configuration needed after the fact.</p>
               </div>
             </li>
           </ol>
@@ -226,8 +226,8 @@
         <span class="cs-label">Reflection</span>
         <div class="cs-content">
           <div class="cs-quote">
-            <p>The hardest part of this project was not the interface — it was the permission model. Getting it wrong would have meant leaders seeing data they shouldn't, or worse, not seeing data they need. The decision to hide features entirely rather than disable them came from watching test users hesitate at greyed-out buttons. Removing the option was kinder than explaining why it was locked.</p>
-            <p style="margin-top:16px">If I were to revisit this, I'd explore an offline-first mode. Many congregations in rural Zambia and Malawi have unreliable internet. The system currently requires a connection — building a sync layer would make it genuinely useful in the field, not just at the office.</p>
+            <p>The hardest part of this project was not the interface. It was the permission model. Getting it wrong would have meant leaders seeing data they shouldn't, or worse, not seeing data they need. The decision to hide features entirely rather than disable them came from watching test users hesitate at greyed-out buttons. Removing the option was kinder than explaining why it was locked.</p>
+            <p style="margin-top:16px">If I were to revisit this, I would explore an offline-first mode. Many congregations in rural Zambia and Malawi have unreliable internet. The system currently requires a connection, so building a sync layer would make it genuinely useful in the field, not just at the office.</p>
           </div>
         </div>
       </div>

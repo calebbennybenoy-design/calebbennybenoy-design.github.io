@@ -65,7 +65,7 @@
         <span class="cs-label">The Company</span>
         <div class="cs-content">
           <h2>About Transguard Group</h2>
-          <p>Transguard Group is one of the UAE's largest and most trusted security and manpower companies. With a workforce of over 60,000 employees, they provide security services across some of the most high-profile locations in the country — from malls and banks to airports and VIP operations. At this scale, coordination is everything.</p>
+          <p>Transguard Group is one of the UAE's largest and most trusted security and manpower companies. With a workforce of over 60,000 employees, they provide security services across some of the most high-profile locations in the country, including malls, banks, airports, and VIP operations. At this scale, coordination is everything.</p>
         </div>
       </div>
     </div>
@@ -96,9 +96,9 @@
         <span class="cs-label">Research</span>
         <div class="cs-content">
           <h2>Understanding the workflow.</h2>
-          <p>I started by mapping how information actually moved through the organisation. Managers were screenshotting WhatsApp threads and emailing them to HQ — a clear signal that the need for central visibility was real but unmet.</p>
+          <p>I started by mapping how information actually moved through the organisation. Managers were screenshotting WhatsApp threads and emailing them to HQ, which was a clear signal that the need for central visibility was real but unmet.</p>
           <p>Two primary users emerged. Operations managers at HQ needed a bird's-eye view across all deployments. Compliance and admin staff needed to audit communication logs and export records for reporting.</p>
-          <p>I used Claude to model the different user scenarios and stress-test the information hierarchy — specifically what needed to surface at the list level versus what could live a level deeper on demand.</p>
+          <p>I used Claude to model the different user scenarios and stress-test the information hierarchy, specifically focusing on what needed to surface at the list level versus what could live a level deeper on demand.</p>
         </div>
       </div>
     </div>
@@ -162,8 +162,8 @@
             <li class="cs-decision">
               <span class="cs-decision-num">01</span>
               <div>
-                <h3>Read-only by design</h3>
-                <p>Making the system purely a monitor with no send capability. Adding a send feature would have created a parallel communication channel that confused the existing workflow. The system's job was to observe, not intervene.</p>
+                <h3>Structured group overview</h3>
+                <p>The core challenge was pulling hundreds of WhatsApp groups into one place and making them scannable. Each group needed to surface its name, department, member count, and last activity so managers could assess the state of operations without opening a single message.</p>
               </div>
             </li>
             <li class="cs-decision">
@@ -184,7 +184,7 @@
               <span class="cs-decision-num">04</span>
               <div>
                 <h3>Split-pane media viewer</h3>
-                <p>When a message contains media, the expanded view splits — text left, media carousel right. Separating them entirely would have broken the connection between what was said and what was sent.</p>
+                <p>When a message contains media, the expanded view splits into text on the left and a media carousel on the right. Separating them entirely would have broken the connection between what was said and what was sent.</p>
               </div>
             </li>
             <li class="cs-decision">
@@ -256,8 +256,8 @@
         <span class="cs-label">Reflection</span>
         <div class="cs-content">
           <div class="cs-quote">
-            <p>The most valuable design decision on this project was not a UI choice. It was the decision to not build a send feature. Restraint is harder than addition, and here it was the right call.</p>
-            <p style="margin-top:16px">If I were to revisit this, I'd explore a notification layer — alerting HQ when a group goes suddenly quiet or unusually active, rather than requiring someone to manually check. Monitoring is reactive. The next step is making it proactive.</p>
+            <p>The most valuable work on this project was figuring out how to take something as unstructured as WhatsApp and make it feel organised. The real design challenge was not building screens but deciding what information belonged where and how to categorise thousands of messages, media files, and members into something a manager could actually use.</p>
+            <p style="margin-top:16px">If I were to revisit this, I would explore a notification layer that alerts HQ when a group goes suddenly quiet or unusually active, rather than requiring someone to manually check. Monitoring is reactive. The next step is making it proactive.</p>
           </div>
         </div>
       </div>

@@ -66,7 +66,7 @@
         <div class="cs-content">
           <h2>About Spark Security</h2>
           <p>Spark Security is a UAE-based security company managing guards deployed across commercial sites including malls, office buildings, and public spaces. Like many companies in the sector, their incident reporting process was largely paper-based. Guards would call in incidents, fill physical forms, or send photos over WhatsApp to supervisors.</p>
-          <p>This module was part of a larger mobile operations platform built by SASI. I led the UX on this particular module alongside a junior designer who handled prototyping and usability testing.</p>
+          <p>This module was part of a larger mobile operations platform built by SASI. I designed the supervisor approval screens where all incident reports are collected and reviewed. A junior designer on the team worked on other aspects of the project, including the incident report form UI.</p>
         </div>
       </div>
     </div>
@@ -79,7 +79,7 @@
         <span class="cs-label">The Problem</span>
         <div class="cs-content">
           <h2>Too much information. Not enough clarity.</h2>
-          <p>When an incident occurred on site — a medical emergency, an injury, a fire, a near miss — a guard would file a report through the Spark Security Guard app. That report then entered a supervisor's approval queue.</p>
+          <p>When an incident occurred on site, whether a medical emergency, an injury, a fire, or a near miss, a guard would file a report through the Spark Security Guard app. That report then entered a supervisor's approval queue.</p>
           <p>The challenge was that supervisors are mobile. They are managing multiple sites, often checking reports early in the morning or between shifts, on their phone, with limited time and attention. The existing process gave them too much to read and no clear path to action. Reports were delayed. Sign-offs were missed.</p>
 
           <div class="cs-callout">
@@ -97,9 +97,9 @@
         <span class="cs-label">Research</span>
         <div class="cs-content">
           <h2>Designing for the field, not the office.</h2>
-          <p>The central question I started with was simple: what does a supervisor actually need to know in the seconds it takes to decide whether to act on a report? Not what information exists about the incident — but what is the minimum needed to make a confident, correct decision.</p>
+          <p>The central question I started with was simple: what does a supervisor actually need to know in the seconds it takes to decide whether to act on a report? Not what information exists about the incident, but what is the minimum needed to make a confident, correct decision.</p>
           <p>I mapped the full incident lifecycle from the guard filing the report through to the branch manager's final sign-off, identifying every decision point and every role involved.</p>
-          <p>I used Claude to stress-test edge cases — what if the supervisor is not on site, what if the incident is disputed, what if the branch manager needs to escalate. This helped define not just the UI states but the exact copy and actions needed at each outcome.</p>
+          <p>I used Claude to stress-test edge cases. What if the supervisor is not on site? What if the incident is disputed? What if the branch manager needs to escalate? This helped define not just the UI states but the exact copy and actions needed at each outcome.</p>
         </div>
       </div>
     </div>
@@ -169,7 +169,7 @@
               <span class="cs-decision-num">01</span>
               <div>
                 <h3>Colour coded incident cards</h3>
-                <p>Each incident type has a colour dot — red for First Aid Medical, purple for Lost Time/Injury, blue for Observation, orange for Fire and Near Miss. Supervisors get a visual severity read before they read a single word.</p>
+                <p>Each incident type has a colour dot: red for First Aid Medical, purple for Lost Time/Injury, blue for Observation, and orange for Fire and Near Miss. Supervisors get a visual severity read before they read a single word.</p>
               </div>
             </li>
             <li class="cs-decision">
@@ -269,8 +269,8 @@
         <span class="cs-label">Reflection</span>
         <div class="cs-content">
           <div class="cs-quote">
-            <p>The sticky Sign button sounds like a small decision. It was not. Supervisors told us they felt more confident acting on a report when the action was always visible — even while they were still reading. Presence communicates readiness. That is the kind of detail that does not show up in a brief but makes all the difference in use.</p>
-            <p style="margin-top:16px">If I were to revisit this, I would explore a way to flag reports that have been sitting in the queue too long — a quiet urgency indicator that prompts action without creating anxiety.</p>
+            <p>The biggest challenge was balancing information density with speed. Supervisors need enough detail to make a confident decision, but too much content slows them down at the exact moment they need to act. The accordion pattern solved this well because it lets each supervisor choose their own depth of review. Some open every section. Others glance at the summary and sign. The design supports both without penalising either.</p>
+            <p style="margin-top:16px">If I were to revisit this, I would explore a way to flag reports that have been sitting in the queue too long. A quiet urgency indicator that prompts action without creating anxiety could help reduce the delay between submission and sign-off.</p>
           </div>
         </div>
       </div>
