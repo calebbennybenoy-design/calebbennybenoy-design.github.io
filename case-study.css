@@ -718,14 +718,17 @@
   .cs-slide-phone { flex: 0 1 50%; max-width: 50%; }
 
   /* Paired phone carousel — single phone per slide on mobile */
-  .cs-carousel.phone-paired .cs-slide { flex: 0 0 100%; }
+  .cs-carousel.phone-paired { padding: 0; gap: 0; }
+  .cs-carousel.phone-paired .cs-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 16%;
+  }
   .cs-carousel.phone-paired .cs-slide-phone {
     flex: 0 0 100%;
     max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 10%;
   }
 
   .cs-quote { padding: 36px 32px; }
