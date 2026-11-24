@@ -121,6 +121,13 @@
     paint();
   }
 
+  /* ---------- phone menu: close after choosing a link, or on Escape / outside tap ---------- */
+  [].forEach.call(document.querySelectorAll('details.mnav'), function (d) {
+    d.addEventListener('click', function (e) { if (e.target.closest('a')) d.open = false; });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') d.open = false; });
+    document.addEventListener('click', function (e) { if (d.open && !d.contains(e.target)) d.open = false; });
+  });
+
   /* ---------- copy email ---------- */
   [].forEach.call(document.querySelectorAll('[data-copy-email]'), function (b) {
     var email = b.getAttribute('data-copy-email');
